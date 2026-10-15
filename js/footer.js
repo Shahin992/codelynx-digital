@@ -16,6 +16,7 @@
     address: ['House-08, Road-22, Block-D,', 'Section-6, Mirpur-1216', 'Dhaka, Bangladesh'],
     phone: '+8801580391983',
     tel: '+8801580391983',
+    email: 'contact@codelynxdigital.com',
     office: 'Mirpur, Dhaka, Bangladesh'
   };
 
@@ -84,7 +85,7 @@
           '</div>' +
           '<div class="footer__col">' +
             '<h3>Get In Touch</h3>' +
-            '<p><a href="tel:' + COMPANY.tel + '">' + COMPANY.phone + '</a></p>' +
+            '<p><a href="mailto:' + COMPANY.email + '">' + COMPANY.email + '</a><br><a href="tel:' + COMPANY.tel + '">' + COMPANY.phone + '</a></p>' +
             '<h4>Office</h4><p>' + COMPANY.office + '</p>' +
           '</div>' +
           '<div class="footer__col"><h3>Services</h3><ul>' + list(SERVICES, true) + '</ul></div>' +

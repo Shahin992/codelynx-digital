@@ -57,6 +57,7 @@
   var CONTACT = {
     phone: '+8801580391983',
     tel: '+8801580391983',
+    email: 'contact@codelynxdigital.com',
     address: ['House-08, Road-22, Block-D, Section-6, Mirpur-1216', 'Dhaka, Bangladesh']
   };
 
@@ -195,6 +196,7 @@
         '<div class="drawer__foot">' +
           '<p class="drawer__label">Get In Touch</p>' +
           '<address class="drawer__address">' + CONTACT.address.join('<br>') + '</address>' +
+          '<a href="mailto:' + CONTACT.email + '">' + CONTACT.email + '</a>' +
           '<a href="tel:' + CONTACT.tel + '">' + CONTACT.phone + '</a>' +
           '<a class="btn btn--dark" href="' + url('contact/') + '">Get a Free Quote</a>' +
         '</div>' +
