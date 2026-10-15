@@ -46,9 +46,19 @@
 
   /* ---------- Scroll animations (GSAP) ---------- */
   if (animate) {
+    // The first section (the hero) is already visible when the page paints (see style.css),
+    // so its content only slides into place instead of fading in from hidden.
+    var hero = document.querySelector('#main > section');
+    var inHero = function (el) { return !!hero && hero.contains(el); };
+    var notInHero = function (el) { return !inHero(el); };
+
     // Headings: words swoop up one after another.
     gsap.utils.toArray('.split').forEach(function (el) {
       var words = el.querySelectorAll('.word__inner');
+      if (inHero(el)) {
+        gsap.from(words, { yPercent: 35, duration: 0.9, ease: 'power3.out', stagger: 0.08 });
+        return;
+      }
       gsap.set(el, { visibility: 'visible' });
       gsap.from(words, {
         yPercent: 110,
@@ -60,8 +70,13 @@
       });
     });
 
+    var heroItems = gsap.utils.toArray('.reveal, .swipe-up').filter(inHero);
+    if (heroItems.length) {
+      gsap.from(heroItems, { y: 30, duration: 1, ease: 'power2.out', stagger: 0.08, clearProps: 'transform' });
+    }
+
     // Text, cards and buttons: fade up, staggered when several enter together.
-    ScrollTrigger.batch('.reveal', {
+    ScrollTrigger.batch(gsap.utils.toArray('.reveal').filter(notInHero), {
       start: 'top 92%',
       once: true,
       onEnter: function (batch) {
@@ -72,7 +87,7 @@
     });
 
     // Images: wipe in from the bottom.
-    ScrollTrigger.batch('.swipe-up', {
+    ScrollTrigger.batch(gsap.utils.toArray('.swipe-up').filter(notInHero), {
       start: 'top 90%',
       once: true,
       onEnter: function (batch) {
@@ -219,38 +234,6 @@
         });
       });
     });
-  });
-
-  /* ---------- AI pages: savings calculator (numbers count with GSAP) ---------- */
-  document.querySelectorAll('[data-roi]').forEach(function (box) {
-    var hours = box.querySelector('[data-roi-hours-input]');
-    var rate = box.querySelector('[data-roi-rate-input]');
-    var outHours = box.querySelector('[data-roi-out-hours]');
-    var outMoney = box.querySelector('[data-roi-out-money]');
-    var AUTOMATED = 0.85;
-    var shown = { hours: 0, money: 0 };
-
-    function render() {
-      outHours.textContent = Math.round(shown.hours).toLocaleString('en-US');
-      outMoney.textContent = '$' + Math.round(shown.money).toLocaleString('en-US');
-    }
-    function update() {
-      var h = +hours.value;
-      var r = +rate.value;
-      var freed = Math.round(h * 52 * AUTOMATED);
-      box.querySelector('[data-roi-hours]').textContent = h + ' hrs';
-      box.querySelector('[data-roi-rate]').textContent = '$' + r + ' /hr';
-      if (animate) {
-        gsap.to(shown, { hours: freed, money: freed * r, duration: 0.5, ease: 'power2.out', onUpdate: render });
-      } else {
-        shown.hours = freed;
-        shown.money = freed * r;
-        render();
-      }
-    }
-    hours.addEventListener('input', update);
-    rate.addEventListener('input', update);
-    update();
   });
 
   /* ---------- AI pages: highlight the sub-nav link for the section in view ---------- */

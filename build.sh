@@ -28,6 +28,7 @@ find . -name index.html -not -path "./$OUT/*" -not -path './.git/*' -not -path '
 done
 cp 404.html "$OUT/404.html"
 cp -r images "$OUT/images"
+cp -r fonts "$OUT/fonts"
 
 # 2. css + js
 if command -v npx >/dev/null 2>&1 && npx --yes "$ESBUILD" --version >/dev/null 2>&1; then
@@ -47,7 +48,8 @@ find "$OUT" -name '*.html' -exec sed -i -E \
 
 
 # 4. robots.txt, llms.txt and sitemap.xml
-# They use __SITE_URL__ instead of a fixed domain: the Worker fills in the address the
+# They (and every page's canonical link, social tags and structured data) use __SITE_URL__
+# instead of a fixed domain: the Worker fills in the address the
 # site is visited on. To write a fixed address instead, build with
 #   SITE_URL=https://www.example.com ./build.sh
 cp robots.txt llms.txt "$OUT/"
@@ -62,6 +64,7 @@ cp robots.txt llms.txt "$OUT/"
   echo '</urlset>'
 } > "$OUT/sitemap.xml"
 if [ -n "${SITE_URL:-}" ]; then
+  find "$OUT" -name '*.html' -exec sed -i "s#__SITE_URL__#${SITE_URL%/}#g" {} +
   sed -i "s#__SITE_URL__#${SITE_URL%/}#g" "$OUT/robots.txt" "$OUT/llms.txt" "$OUT/sitemap.xml"
 fi
 

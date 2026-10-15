@@ -23,9 +23,12 @@ const TYPES = {
   woff2: 'font/woff2'
 };
 
-// These use __SITE_URL__ instead of a fixed domain (see build.sh); the Worker fills in
+// Pages (canonical links, social tags, structured data) and these files use __SITE_URL__
+// instead of a fixed domain (see build.sh); the Worker fills in
 // the address the site is visited on, so they stay right when a custom domain is added.
 const SITE_URL_FILES = new Set(['sitemap.xml', 'robots.txt', 'llms.txt']);
+
+const IMAGE_TYPES = new Set(['png', 'jpg', 'jpeg', 'webp', 'avif', 'gif', 'svg', 'ico']);
 
 const NOT_FOUND_PAGE = '<!doctype html><html lang="en"><head><meta charset="utf-8">' +
   '<meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found | Codelynx Digital</title>' +
@@ -71,7 +74,7 @@ export default {
     if (request.headers.get('If-None-Match') === object.httpEtag) {
       return new Response(null, { status: 304, headers });
     }
-    if (SITE_URL_FILES.has(key)) {
+    if (ext === 'html' || SITE_URL_FILES.has(key)) {
       const text = (await object.text()).replaceAll('__SITE_URL__', url.origin);
       return new Response(request.method === 'HEAD' ? null : text, { headers });
     }
@@ -84,6 +87,10 @@ function cacheControl(ext, url) {
   if (ext === 'html') return 'public, max-age=0, must-revalidate';
   // sitemap.xml, robots.txt, llms.txt: refresh hourly so crawlers see new pages soon.
   if (ext === 'xml' || ext === 'txt') return 'public, max-age=3600';
+  // Font files never change (a new font would get a new file name).
+  if (ext === 'woff2') return 'public, max-age=31536000, immutable';
+  // Images: keep for 30 days, then refresh in the background.
+  if (IMAGE_TYPES.has(ext)) return 'public, max-age=2592000, stale-while-revalidate=86400';
   // build.sh adds ?v=<hash> to CSS/JS links, so each build gets new URLs.
   if ((ext === 'css' || ext === 'js') && url.searchParams.has('v')) return 'public, max-age=31536000, immutable';
   return 'public, max-age=86400';
