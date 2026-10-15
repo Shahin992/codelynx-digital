@@ -59,31 +59,32 @@
 
         <div class="contact-card reveal">
           <h2>Send Us a Message</h2>
-          <!-- Not connected to a form service yet. Before launch, point this form at your provider
-               (e.g. Formspree, Netlify Forms or your CRM) so messages are actually delivered. -->
-          <form class="cform" data-contact-form novalidate>
+          <!-- Messages are stored in the "Codelynx Digital - Contact" Google Form. Each field's name is that
+               question's ID (form > ⋮ > Get pre-filled link shows them). js/main.js sends the form
+               in the background and then opens data-thanks; without JavaScript it posts to Google directly. -->
+          <form class="cform" action="https://docs.google.com/forms/d/e/1FAIpQLSe523XjLhZY9H89Xdy4HtD3K2BgK0SFF3TOqRw42m_493-f-w/formResponse" method="post" data-contact-form data-thanks="../thank-you/" novalidate>
             <div class="cform__field">
               <label class="visually-hidden" for="cfName">Your name (required)</label>
-              <input id="cfName" name="name" type="text" placeholder="Your Name*" autocomplete="name" required aria-describedby="cfNameErr">
+              <input id="cfName" name="entry.925536035" type="text" placeholder="Your Name*" autocomplete="name" required aria-describedby="cfNameErr">
               <span class="cform__error" id="cfNameErr"></span>
             </div>
             <div class="cform__field">
               <label class="visually-hidden" for="cfCompany">Company name</label>
-              <input id="cfCompany" name="company" type="text" placeholder="Company Name" autocomplete="organization">
+              <input id="cfCompany" name="entry.117524234" type="text" placeholder="Company Name" autocomplete="organization">
             </div>
             <div class="cform__field">
               <label class="visually-hidden" for="cfEmail">Email address (required)</label>
-              <input id="cfEmail" name="email" type="email" placeholder="Email Address*" autocomplete="email" required aria-describedby="cfEmailErr">
+              <input id="cfEmail" name="entry.408760395" type="email" placeholder="Email Address*" autocomplete="email" required aria-describedby="cfEmailErr">
               <span class="cform__error" id="cfEmailErr"></span>
             </div>
             <div class="cform__field">
               <label class="visually-hidden" for="cfPhone">Phone number (required)</label>
-              <input id="cfPhone" name="phone" type="tel" placeholder="Phone Number*" autocomplete="tel" required pattern="[0-9()+.\- ]{7,}" aria-describedby="cfPhoneErr">
+              <input id="cfPhone" name="entry.288379176" type="tel" placeholder="Phone Number*" autocomplete="tel" required pattern="[0-9()+.\- ]{7,}" aria-describedby="cfPhoneErr">
               <span class="cform__error" id="cfPhoneErr"></span>
             </div>
             <div class="cform__field cform__field--full">
               <label class="visually-hidden" for="cfMessage">Message</label>
-              <textarea id="cfMessage" name="message" placeholder="Message" rows="6"></textarea>
+              <textarea id="cfMessage" name="entry.1013603443" placeholder="Message" rows="6"></textarea>
             </div>
             <!-- spam trap: real visitors never see or fill this field -->
             <div class="visually-hidden" aria-hidden="true">
@@ -92,13 +93,9 @@
             </div>
             <div class="cform__actions">
               <button class="cform__submit" type="submit">Send</button>
+              <p class="cform__status" data-contact-status role="alert" hidden></p>
             </div>
           </form>
-          <div class="cform-success" data-contact-success hidden tabindex="-1">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7 12 3.5 3.5L17 9"/></svg>
-            <h3>Thanks, your message is on its way.</h3>
-            <p>We will get back to you within one business day. Need something sooner? Call us at <a href="tel:+10000000000">(000) 000-0000</a>.</p>
-          </div>
         </div>
       </div>
     </section>

@@ -41,20 +41,20 @@ export default {
     try {
       path = decodeURIComponent(url.pathname);
     } catch (e) {
-      return notFound();
+      return notFound(env);
     }
 
     // Pages live at folder/index.html, so /contact redirects to /contact/
     const lastSegment = path.slice(path.lastIndexOf('/') + 1);
     if (lastSegment && !lastSegment.includes('.')) {
       const page = await env.SITE.head(path.slice(1) + '/index.html');
-      if (!page) return notFound();
+      if (!page) return notFound(env);
       return Response.redirect(url.origin + path + '/' + url.search, 301);
     }
 
     const key = path.endsWith('/') ? path.slice(1) + 'index.html' : path.slice(1);
     const object = await env.SITE.get(key);
-    if (!object) return notFound();
+    if (!object) return notFound(env);
 
     const ext = key.slice(key.lastIndexOf('.') + 1).toLowerCase();
     const headers = new Headers({
@@ -79,8 +79,10 @@ function cacheControl(ext, url) {
   return 'public, max-age=86400';
 }
 
-function notFound() {
-  return new Response(NOT_FOUND_PAGE, {
+// Uses the site's own 404.html from the bucket, or a plain built-in page if it is missing.
+async function notFound(env) {
+  const page = await env.SITE.get('404.html');
+  return new Response(page ? page.body : NOT_FOUND_PAGE, {
     status: 404,
     headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' }
   });
