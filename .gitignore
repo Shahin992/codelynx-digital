@@ -1,0 +1,6 @@
+# Built output: created by build.sh locally and by the deploy workflow in CI
+build/
+
+# Tooling caches
+node_modules/
+.wrangler/
