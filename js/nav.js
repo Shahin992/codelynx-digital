@@ -54,7 +54,11 @@
     ['Summit Solar', 'Lead-Generation Website', 'photo-1509391366360-2e959784a276']
   ];
 
-  var CONTACT = { email: 'hello@yourbrand.com', phone: '(000) 000-0000', tel: '+10000000000' };
+  var CONTACT = {
+    phone: '+8801580391983',
+    tel: '+8801580391983',
+    address: ['House-08, Road-22, Block-D, Section-6, Mirpur-1216', 'Dhaka, Bangladesh']
+  };
 
   var ICONS = {
     web: '<rect x="5" y="9" width="38" height="30" rx="2"/><path d="M5 16h38M11 22h12M11 27h20M11 32h16"/>',
@@ -190,7 +194,7 @@
         '<nav class="drawer__nav" aria-label="Main"><ul>' + drawerNav() + '</ul></nav>' +
         '<div class="drawer__foot">' +
           '<p class="drawer__label">Get In Touch</p>' +
-          '<a href="mailto:' + CONTACT.email + '">' + CONTACT.email + '</a>' +
+          '<address class="drawer__address">' + CONTACT.address.join('<br>') + '</address>' +
           '<a href="tel:' + CONTACT.tel + '">' + CONTACT.phone + '</a>' +
           '<a class="btn btn--dark" href="' + url('contact/') + '">Get a Free Quote</a>' +
         '</div>' +
