@@ -11,6 +11,7 @@
 #   1. copies every page (index.html), 404.html and the images folder into build/
 #   2. minifies css/ and js/ with esbuild (falls back to plain copies if npx is missing)
 #   3. adds ?v=<hash> to the CSS/JS links so browsers load fresh files after each deploy
+#   4. adds robots.txt and llms.txt, and generates sitemap.xml from the pages
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -43,5 +44,25 @@ VERSION=$(cat "$OUT"/css/*.css "$OUT"/js/*.js | md5sum | cut -c1-8)
 find "$OUT" -name '*.html' -exec sed -i -E \
   -e "s#(css/style\.css)\"#\1?v=$VERSION\"#" \
   -e "s#(js/(nav|footer|posts|main)\.js)\"#\1?v=$VERSION\"#g" {} +
+
+
+# 4. robots.txt, llms.txt and sitemap.xml
+# They use __SITE_URL__ instead of a fixed domain: the Worker fills in the address the
+# site is visited on. To write a fixed address instead, build with
+#   SITE_URL=https://www.example.com ./build.sh
+cp robots.txt llms.txt "$OUT/"
+{
+  echo '<?xml version="1.0" encoding="UTF-8"?>'
+  echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+  # every page except the thank-you page; <lastmod> is the page's last commit date
+  find "$OUT" -name index.html | sed "s#^$OUT/##; s#index\.html\$##" | grep -vx 'thank-you/' | sort | while read -r path; do
+    lastmod=$(git log -1 --format=%cs -- "${path}index.html" 2>/dev/null || true)
+    printf '  <url>\n    <loc>__SITE_URL__/%s</loc>\n    <lastmod>%s</lastmod>\n  </url>\n' "$path" "${lastmod:-$(date -u +%F)}"
+  done
+  echo '</urlset>'
+} > "$OUT/sitemap.xml"
+if [ -n "${SITE_URL:-}" ]; then
+  sed -i "s#__SITE_URL__#${SITE_URL%/}#g" "$OUT/robots.txt" "$OUT/llms.txt" "$OUT/sitemap.xml"
+fi
 
 echo "Built $(find "$OUT" -name index.html | wc -l) pages into $OUT/ (version $VERSION, $(du -sh "$OUT" | cut -f1))"

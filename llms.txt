@@ -1,0 +1,57 @@
+# Codelynx Digital
+
+> Codelynx Digital is a web design, development and digital marketing agency based in Mirpur, Dhaka, Bangladesh. We design and build custom websites, online stores and web applications, and help businesses grow with local SEO, digital marketing, CRM integration and AI search optimization.
+
+- Office: House-08, Road-22, Block-D, Section-6, Mirpur-1216, Dhaka, Bangladesh
+- Phone: +8801580391983
+- Contact form: __SITE_URL__/contact/
+
+Every project is designed from a blank canvas around the client's brand and goals. The team covers strategy, design, development and marketing, and supports clients after launch with maintenance and ongoing campaigns.
+
+## Services
+
+- [Custom Web Design](__SITE_URL__/services/custom-web-design/): Custom-designed websites built to turn visitors into customers.
+- [E-commerce Development](__SITE_URL__/services/ecommerce-development/): Online stores that drive sales, built on Shopify, WooCommerce, Adobe Commerce, Drupal, Squarespace or Amazon Marketplace.
+- [Custom Web Applications](__SITE_URL__/services/custom-web-applications/): Portals, dashboards and business tools built with Laravel, PHP, Vue.js, MySQL and AWS.
+- [Website Maintenance](__SITE_URL__/services/website-maintenance/): Security, updates and backups that keep a website fast and safe.
+- [Local SEO Services](__SITE_URL__/services/seo-services/): Help nearby customers find the business in search results and maps.
+- [Digital Marketing](__SITE_URL__/services/digital-marketing/): Marketing campaigns built around revenue, not vanity metrics.
+- [Marketplace Management](__SITE_URL__/services/marketplace-management/): Storefronts, listings and day-to-day management on major online marketplaces.
+- [CRM Integration](__SITE_URL__/services/crm-integration/): Set up, connect and automate a CRM such as HubSpot so every lead is followed up.
+- [Digital Consulting](__SITE_URL__/services/digital-consulting/): Digital roadmaps tied to measurable return on investment.
+- [AI Strategy & Integration](__SITE_URL__/services/ai-strategy/): AI agents and smart automations for everyday business work.
+- [AI Search Optimization](__SITE_URL__/services/ai-search-optimization/): Make a website easy for AI assistants to read so the business appears accurately in AI-generated answers.
+
+## Company
+
+- [Home](__SITE_URL__/): Overview of Codelynx Digital, its services and recent work
+- [Services](__SITE_URL__/services/): All services in one place
+- [About Us](__SITE_URL__/about/): The team, values and story behind Codelynx Digital
+- [Our Work](__SITE_URL__/portfolio/): Selected website design, SEO and digital marketing projects
+- [Industries](__SITE_URL__/industries/): Industries served, including healthcare, law firms, manufacturing, non-profits, home services, real estate, retail and technology
+- [Contact](__SITE_URL__/contact/): Send a message or call the Dhaka office
+
+## Insights
+
+- [Is AI Describing Your Business Correctly? A Practical Checklist for 2027](__SITE_URL__/insights/is-ai-describing-your-business-correctly/): How to check what AI assistants say about you, correct mistakes and give them trustworthy information.
+- [How AI Assistants Are Changing Local Search Results](__SITE_URL__/insights/ai-assistants-local-search/): More customers ask AI tools for recommendations. Here is how local businesses can stay visible.
+- [Building a Privacy-Friendly Website That Still Generates Leads](__SITE_URL__/insights/privacy-friendly-website-leads/): Forms, analytics and follow-up that respect privacy and still bring in qualified leads.
+- [Self-Updating Websites: Keeping Content Fresh With AI](__SITE_URL__/insights/self-updating-websites-ai/): Automated content checks keep opening hours, prices and service details accurate.
+- [Making Your Portfolio Readable by People and Machines](__SITE_URL__/insights/portfolio-readable-people-machines/): A few structural changes help visitors and AI tools understand your work.
+- [Why Original Insights Beat Generic Content](__SITE_URL__/insights/original-insights-beat-generic-content/): Turn your team's expertise into articles worth reading, linking to and citing.
+- [Structuring Your Data for AI-Powered Search](__SITE_URL__/insights/structuring-data-ai-search/): Clean, consistent product and location data makes you easier to recommend.
+- [Turning Online Searches Into Foot Traffic](__SITE_URL__/insights/online-searches-into-foot-traffic/): Business profiles, reviews and location pages that bring nearby customers through the door.
+- [Your Website Is Talking to Machines, Too](__SITE_URL__/insights/website-talking-to-machines/): What AI crawlers look for and how to give them an accurate picture of your business.
+- [Is Your Website Invisible to New Customers?](__SITE_URL__/insights/website-invisible-new-customers/): Quick checks for the slow pages, thin content and technical gaps that hide a great business.
+- [Topic Clusters: Organizing Content That Ranks](__SITE_URL__/insights/topic-clusters-content-that-ranks/): Group related pages around core topics so people and search engines can follow along.
+- [Going Beyond Basic SEO for Professional Services](__SITE_URL__/insights/seo-for-professional-services/): How law firms and consultants can stand out in crowded, competitive searches.
+- [Planning a Multi-Location Website That Scales](__SITE_URL__/insights/multi-location-website/): Structure a site for several branches without duplicating work.
+- [Product Pages That Turn B2B Buyers Into Leads](__SITE_URL__/insights/b2b-product-pages-leads/): Answer real buyer questions and make requesting a quote effortless.
+- [Automating FAQ Markup Without Writing Code](__SITE_URL__/insights/automating-faq-markup/): Turn the questions you already answer into rich search results.
+- [When Spreadsheets Stop Scaling: Signs You Need a Custom App](__SITE_URL__/insights/spreadsheets-custom-app/): Warning signs that a purpose-built tool will quickly pay for itself.
+- [Click-and-Collect: Helping Local Shops Compete Online](__SITE_URL__/insights/click-and-collect-local-shops/): What it takes to set up buy online, pick up in store the right way.
+
+## Optional
+
+- [Insights index](__SITE_URL__/insights/): All articles, filterable by topic
+- [Sitemap](__SITE_URL__/sitemap.xml): Every page on the site
