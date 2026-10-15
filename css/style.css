@@ -1694,7 +1694,7 @@ svg { display: block; }
 
 .faq__answer { padding: 0 56px 28px 0; }
 .faq__answer p { margin: 0; font-size: 1rem; line-height: 1.75; }
-.faq__answer a { color: var(--teal); font-weight: 500; }
+.faq__answer a { color: #007f91; font-weight: 500; }   /* 4.7:1 on white */
 .faq__item[open] .faq__answer { animation: faq-open .45s var(--ease); }
 @keyframes faq-open {
   from { opacity: 0; transform: translateY(-8px); }
@@ -3085,7 +3085,7 @@ svg { display: block; }
   stroke-linejoin: round;
 }
 .contact-info__icon--solid { fill: var(--teal-light); stroke: none; }
-.contact-info h3 { margin: 0 0 10px; font-size: 19.2px; line-height: 1; color: var(--white); }
+.contact-info h2 { margin: 0 0 10px; font-size: 19.2px; line-height: 1; color: var(--white); }
 .contact-info address,
 .contact-info p { margin: 0 0 15.4px; font-size: 15.4px; font-style: normal; font-weight: 300; line-height: 1.6; color: var(--light); }
 .contact-info a { color: var(--teal-light); text-decoration: underline; }

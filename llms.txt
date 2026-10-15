@@ -4,6 +4,7 @@
 
 - Office: House-08, Road-22, Block-D, Section-6, Mirpur-1216, Dhaka, Bangladesh
 - Phone: +8801580391983
+- Email: contact@codelynxdigital.com
 - Contact form: __SITE_URL__/contact/
 
 Every project is designed from a blank canvas around the client's brand and goals. The team covers strategy, design, development and marketing, and supports clients after launch with maintenance and ongoing campaigns.
@@ -29,7 +30,7 @@ Every project is designed from a blank canvas around the client's brand and goal
 - [About Us](__SITE_URL__/about/): The team, values and story behind Codelynx Digital
 - [Our Work](__SITE_URL__/portfolio/): Selected website design, SEO and digital marketing projects
 - [Industries](__SITE_URL__/industries/): Industries served, including healthcare, law firms, manufacturing, non-profits, home services, real estate, retail and technology
-- [Contact](__SITE_URL__/contact/): Send a message or call the Dhaka office
+- [Contact](__SITE_URL__/contact/): Send a message, email contact@codelynxdigital.com or call the Dhaka office
 
 ## Insights
 
