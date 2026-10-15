@@ -118,7 +118,7 @@
     }).join('');
     var cards = FEATURED.map(function (f) {
       return '<a class="mega-card" href="' + url('portfolio/') + '">' +
-        '<span class="mega-card__img"><img src="https://images.unsplash.com/' + f[2] + '?w=520&amp;h=340&amp;fit=crop&amp;q=70&amp;auto=format" alt="" loading="lazy"></span>' +
+        '<span class="mega-card__img"><img src="' + url('assets/images/' + f[2] + '-520x340.webp') + '" alt="" loading="lazy"></span>' +
         '<span class="mega-card__client">' + f[0] + '</span><strong>' + f[1] + '</strong></a>';
     }).join('');
     return '<div class="mega" id="mega-work" data-mega>' +

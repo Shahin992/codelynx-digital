@@ -8,7 +8,7 @@
 # Locally you only need it to preview the minified output.
 #
 # It:
-#   1. copies every page (index.html), 404.html and the images folder into build/
+#   1. copies every page (index.html), 404.html, images/, assets/ and fonts/ into build/
 #   2. minifies css/ and js/ with esbuild (falls back to plain copies if npx is missing)
 #   3. adds ?v=<hash> to the CSS/JS links so browsers load fresh files after each deploy
 #   4. adds robots.txt and llms.txt, and generates sitemap.xml from the pages
@@ -21,13 +21,14 @@ ESBUILD=esbuild@0.24.2
 rm -rf "$OUT"
 mkdir -p "$OUT/css" "$OUT/js"
 
-# 1. pages + images
+# 1. pages + images (assets/images holds the site's photos as WebP)
 find . -name index.html -not -path "./$OUT/*" -not -path './.git/*' -not -path './node_modules/*' -not -path './.wrangler/*' | while read -r page; do
   mkdir -p "$OUT/$(dirname "$page")"
   cp "$page" "$OUT/$page"
 done
 cp 404.html "$OUT/404.html"
 cp -r images "$OUT/images"
+cp -r assets "$OUT/assets"
 cp -r fonts "$OUT/fonts"
 
 # 2. css + js

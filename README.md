@@ -28,6 +28,11 @@ Open the folder with any static server (for example Live Server) and edit the fi
 
 - `index.html`, `about/`, `services/`, `insights/` ... : one folder per page
 - `css/style.css`, `js/` (nav, footer, posts, main), `images/`
+- `assets/images/`: every photo on the site, self-hosted as compressed WebP (originally from
+  Unsplash; the file name is the Unsplash photo ID plus its size). The 1200x630 article images
+  also have a `.jpg` copy for `og:image`, because some apps (LinkedIn, older chat clients)
+  don't show WebP link previews. To add a photo, save it at the size it is shown at (2x for
+  sharp screens) and convert it, e.g. `magick in.jpg -quality 72 -define webp:method=6 out.webp`.
 - `build.sh`: production build (copy pages, minify CSS/JS, cache-busting links, generate `sitemap.xml`)
 - `robots.txt`, `llms.txt`: crawler rules and a plain-text site summary for AI tools. They and the
   generated sitemap use `__SITE_URL__`; the Worker swaps in the address the site is visited on,
