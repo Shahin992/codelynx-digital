@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../" data-page="insights" data-header="solid">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Insights: Web Design, SEO &amp; AI Blog | Codelynx Digital</title>
+  <meta name="description" content="Practical articles on web design, local SEO, AI search and digital marketing from the Codelynx Digital team.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/logo.png">
+  <link rel="apple-touch-icon" href="../images/logo.png">
+  <link rel="stylesheet" href="../css/style.css?v=12d244b4">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div id="siteNav"></div>
+  <script src="../js/nav.js?v=12d244b4"></script>
+
+  <main id="main">
+
+    <!-- ============ BLOG ============ -->
+    <section class="section blog">
+      <div class="container">
+        <header class="blog-head">
+          <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="../">Home</a> &raquo; <span>Insights</span></nav>
+          <h1 class="blog-title split">Ideas &amp; Insights: <strong>The Codelynx Playbook</strong></h1>
+          <p class="blog-intro reveal">Practical advice on web design, SEO, AI and digital growth from the Codelynx Digital team.</p>
+        </header>
+
+        <!-- featured post + newsletter -->
+        <div class="blog-top">
+          <article class="feature-post glow reveal">
+            <p class="feature-post__label">Featured Post</p>
+            <span class="post__meta"><i class="post__avatar">AR</i><span class="post__author">Alex Rivera</span><span class="post__date">October 8, 2026</span></span>
+            <h2><a href="is-ai-describing-your-business-correctly/">Is AI Describing Your Business Correctly? A Practical Checklist for 2027</a></h2>
+            <p>AI assistants now answer questions about your company before customers ever reach your website. This guide shows how to check what they say, correct mistakes and give them clear, trustworthy information to work with.</p>
+            <span class="feature-post__tag">AI</span>
+          </article>
+
+          <aside class="newsletter reveal">
+            <h2>Get New Posts by Email</h2>
+            <p>Join our newsletter for new articles, tips and strategies on web design and digital marketing, delivered straight to your inbox.</p>
+            <!-- Not connected to an email service yet: hook the form up to your provider (Mailchimp, ConvertKit, etc.) before launch. -->
+            <form class="newsletter__form" data-newsletter novalidate>
+              <label class="visually-hidden" for="newsletterEmail">Email address</label>
+              <input id="newsletterEmail" type="email" name="email" placeholder="Email" autocomplete="email" required>
+              <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></button>
+            </form>
+            <p class="newsletter__note" data-newsletter-note aria-live="polite">We respect your privacy. Unsubscribe anytime.</p>
+          </aside>
+        </div>
+
+        <!-- filters + search -->
+        <div class="blog-tools reveal">
+          <p class="blog-filter__label" id="filterLabel">Filter by topic:</p>
+          <div class="blog-filter" role="group" aria-labelledby="filterLabel">
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="ai" aria-pressed="false">AI</button>
+            <button type="button" data-filter="strategy" aria-pressed="false">Business Strategy</button>
+            <button type="button" data-filter="development" aria-pressed="false">Custom Development</button>
+            <button type="button" data-filter="marketing" aria-pressed="false">Digital Marketing</button>
+            <button type="button" data-filter="ecommerce" aria-pressed="false">E-commerce</button>
+            <button type="button" data-filter="design" aria-pressed="false">Web Design</button>
+          </div>
+          <form class="blog-search" role="search" data-blog-search>
+            <label class="visually-hidden" for="blogSearch">Search articles</label>
+            <svg class="blog-search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="blogSearch" type="search" placeholder="Type to start searching..." autocomplete="off">
+            <button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+          </form>
+        </div>
+
+        <!-- posts -->
+        <div class="blog-grid" data-blog-grid>
+          <article class="blog-card reveal" data-cat="ai">
+            <span class="post__meta"><i class="post__avatar">JR</i><span class="post__author">Jordan Rivera</span><span class="post__date">September 24, 2026</span></span>
+            <h3><a href="ai-assistants-local-search/">How AI Assistants Are Changing Local Search Results</a></h3>
+            <p>More customers ask AI tools for recommendations instead of scrolling through search results. Here is how local businesses can stay visible as search habits shift.</p>
+            <span class="blog-card__tag">AI</span>
+          </article>
+          <article class="blog-card reveal" data-cat="design">
+            <span class="post__meta"><i class="post__avatar">SP</i><span class="post__author">Sam Patel</span><span class="post__date">September 10, 2026</span></span>
+            <h3><a href="privacy-friendly-website-leads/">Building a Privacy-Friendly Website That Still Generates Leads</a></h3>
+            <p>Third-party cookies are fading out. Learn how to design forms, analytics and follow-up that respect privacy and still bring in qualified leads.</p>
+            <span class="blog-card__tag">Web Design</span>
+          </article>
+          <article class="blog-card reveal" data-cat="ai">
+            <span class="post__meta"><i class="post__avatar">SP</i><span class="post__author">Sam Patel</span><span class="post__date">August 28, 2026</span></span>
+            <h3><a href="self-updating-websites-ai/">Self-Updating Websites: Keeping Content Fresh With AI</a></h3>
+            <p>Stale information hurts trust and rankings. See how automated content checks keep opening hours, prices and service details accurate.</p>
+            <span class="blog-card__tag">AI</span>
+          </article>
+          <article class="blog-card reveal" data-cat="design">
+            <span class="post__meta"><i class="post__avatar">TK</i><span class="post__author">Taylor Kim</span><span class="post__date">August 19, 2026</span></span>
+            <h3><a href="portfolio-readable-people-machines/">Making Your Portfolio Readable by People and Machines</a></h3>
+            <p>Minimal portfolios look great but often say too little. A few structural changes help visitors and AI tools understand your work and recommend it.</p>
+            <span class="blog-card__tag">Web Design</span>
+          </article>
+          <article class="blog-card reveal" data-cat="marketing">
+            <span class="post__meta"><i class="post__avatar">AR</i><span class="post__author">Alex Rivera</span><span class="post__date">August 6, 2026</span></span>
+            <h3><a href="original-insights-beat-generic-content/">Why Original Insights Beat Generic Content</a></h3>
+            <p>Search engines and AI models reward content that adds something new. Here is how to turn your team's expertise into articles worth citing.</p>
+            <span class="blog-card__tag">Digital Marketing</span>
+          </article>
+          <article class="blog-card reveal" data-cat="ai">
+            <span class="post__meta"><i class="post__avatar">ML</i><span class="post__author">Marcus Lee</span><span class="post__date">July 23, 2026</span></span>
+            <h3><a href="structuring-data-ai-search/">Structuring Your Data for AI-Powered Search</a></h3>
+            <p>Clean, consistent information about your products and locations makes it easier for AI tools to recommend you. A practical place to start.</p>
+            <span class="blog-card__tag">AI</span>
+          </article>
+          <article class="blog-card reveal" data-cat="marketing">
+            <span class="post__meta"><i class="post__avatar">JR</i><span class="post__author">Jordan Rivera</span><span class="post__date">July 9, 2026</span></span>
+            <h3><a href="online-searches-into-foot-traffic/">Turning Online Searches Into Foot Traffic</a></h3>
+            <p>A simple playbook for business profiles, reviews and location pages that brings more nearby customers through your door.</p>
+            <span class="blog-card__tag">Digital Marketing</span>
+          </article>
+          <article class="blog-card reveal" data-cat="strategy">
+            <span class="post__meta"><i class="post__avatar">PS</i><span class="post__author">Priya Shah</span><span class="post__date">June 25, 2026</span></span>
+            <h3><a href="website-talking-to-machines/">Your Website Is Talking to Machines, Too</a></h3>
+            <p>Browsers are no longer your only visitors. Learn what AI crawlers look for and how to make sure they come away with an accurate picture of your business.</p>
+            <span class="blog-card__tag">Business Strategy</span>
+          </article>
+          <article class="blog-card reveal" data-cat="design">
+            <span class="post__meta"><i class="post__avatar">TK</i><span class="post__author">Taylor Kim</span><span class="post__date">June 12, 2026</span></span>
+            <h3><a href="website-invisible-new-customers/">Is Your Website Invisible to New Customers?</a></h3>
+            <p>Slow pages, thin content and missing technical basics can quietly hide a great business. Run through these quick checks to find out.</p>
+            <span class="blog-card__tag">Web Design</span>
+          </article>
+          <article class="blog-card reveal" data-cat="marketing">
+            <span class="post__meta"><i class="post__avatar">SP</i><span class="post__author">Sam Patel</span><span class="post__date">May 30, 2026</span></span>
+            <h3><a href="topic-clusters-content-that-ranks/">Topic Clusters: Organizing Content That Ranks</a></h3>
+            <p>Group related pages around core topics so search engines and visitors can follow your expertise from start to finish.</p>
+            <span class="blog-card__tag">Digital Marketing</span>
+          </article>
+          <article class="blog-card reveal" data-cat="marketing">
+            <span class="post__meta"><i class="post__avatar">AR</i><span class="post__author">Alex Rivera</span><span class="post__date">May 14, 2026</span></span>
+            <h3><a href="seo-for-professional-services/">Going Beyond Basic SEO for Professional Services</a></h3>
+            <p>Practice-area pages, structured data and genuine expertise help law firms and consultants stand out in competitive searches.</p>
+            <span class="blog-card__tag">Digital Marketing</span>
+          </article>
+          <article class="blog-card reveal" data-cat="strategy">
+            <span class="post__meta"><i class="post__avatar">ML</i><span class="post__author">Marcus Lee</span><span class="post__date">April 30, 2026</span></span>
+            <h3><a href="multi-location-website/">Planning a Multi-Location Website That Scales</a></h3>
+            <p>From location pages to shared content, here is how to structure a website for a business with several branches without duplicating work.</p>
+            <span class="blog-card__tag">Business Strategy</span>
+          </article>
+          <article class="blog-card reveal" data-cat="ecommerce">
+            <span class="post__meta"><i class="post__avatar">JR</i><span class="post__author">Jordan Rivera</span><span class="post__date">April 16, 2026</span></span>
+            <h3><a href="b2b-product-pages-leads/">Product Pages That Turn B2B Buyers Into Leads</a></h3>
+            <p>Replace dense spec sheets with pages that answer real buyer questions and make requesting a quote effortless.</p>
+            <span class="blog-card__tag">E-commerce</span>
+          </article>
+          <article class="blog-card reveal" data-cat="development">
+            <span class="post__meta"><i class="post__avatar">SP</i><span class="post__author">Sam Patel</span><span class="post__date">April 2, 2026</span></span>
+            <h3><a href="automating-faq-markup/">Automating FAQ Markup Without Writing Code</a></h3>
+            <p>Turn the questions you already answer into rich search results with a simple, repeatable workflow.</p>
+            <span class="blog-card__tag">Custom Development</span>
+          </article>
+          <article class="blog-card reveal" data-cat="development">
+            <span class="post__meta"><i class="post__avatar">ML</i><span class="post__author">Marcus Lee</span><span class="post__date">March 19, 2026</span></span>
+            <h3><a href="spreadsheets-custom-app/">When Spreadsheets Stop Scaling: Signs You Need a Custom App</a></h3>
+            <p>Manual processes break as a business grows. These warning signs mean a purpose-built tool will quickly pay for itself.</p>
+            <span class="blog-card__tag">Custom Development</span>
+          </article>
+          <article class="blog-card reveal" data-cat="ecommerce">
+            <span class="post__meta"><i class="post__avatar">TK</i><span class="post__author">Taylor Kim</span><span class="post__date">March 5, 2026</span></span>
+            <h3><a href="click-and-collect-local-shops/">Click-and-Collect: Helping Local Shops Compete Online</a></h3>
+            <p>Buy online, pick up in store can give independent retailers a real edge. Here is what it takes to set it up well.</p>
+            <span class="blog-card__tag">E-commerce</span>
+          </article>
+        </div>
+        <p class="blog-empty" data-blog-empty hidden>No articles match your search. Try another topic or keyword.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+  <script src="../js/footer.js?v=12d244b4"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js?v=12d244b4"></script>
+</body>
+</html>
