@@ -9,11 +9,15 @@ Static website for Codelynx Digital: plain HTML, CSS and GSAP.
   runs [the deploy workflow](.github/workflows/deploy.yml), which builds the site,
   uploads it to the `codelynx-digital-site` R2 bucket and deploys the Worker that serves it.
 
-To release, open a pull request from `main` into `production` and merge it, or:
+To release, open a pull request from `main` into `production` and merge it, or move
+`production` up to `main` straight from the `main` branch (no checkout needed):
 
 ```bash
-git checkout production && git merge main && git push && git checkout main
+git push origin main:production
 ```
+
+This only fast-forwards: if `production` has commits that `main` does not, GitHub refuses
+the push instead of overwriting them.
 
 ## Working locally
 
