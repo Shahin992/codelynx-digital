@@ -491,6 +491,22 @@
       });
   }
 
+  /* ---------- Article share links: share this page's real address ---------- */
+  var shareLinks = document.querySelectorAll('[data-share]');
+  if (shareLinks.length) {
+    var sharePage = encodeURIComponent(location.origin + location.pathname);
+    var shareH1 = document.querySelector('h1');
+    var shareTitle = encodeURIComponent(shareH1 ? shareH1.textContent.replace(/\s+/g, ' ').trim() : document.title);
+    var shareUrls = {
+      facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + sharePage,
+      x: 'https://x.com/intent/tweet?url=' + sharePage + '&text=' + shareTitle,
+      linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + sharePage
+    };
+    shareLinks.forEach(function (a) {
+      if (shareUrls[a.dataset.share]) a.href = shareUrls[a.dataset.share];
+    });
+  }
+
   /* ---------- Contact form: stored in a Google Form ---------- */
   // The form's action is the Google Form's formResponse URL and each field is named after
   // its question ID (see contact/index.html). After checking the fields we send them in the
