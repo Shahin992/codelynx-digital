@@ -28,17 +28,16 @@
   ];
 
   // [label, path from the site root]
+  // A shortlist, followed by an "All Services" link: with that link it is as long as
+  // COMPANY_LINKS, so the columns end level. The nav menu lists every service.
   var SERVICES = [
     ['Custom Web Design', 'services/custom-web-design/'],
     ['E-commerce Development', 'services/ecommerce-development/'],
     ['SEO Services', 'services/seo-services/'],
     ['Digital Marketing', 'services/digital-marketing/'],
     ['Custom Web Applications', 'services/custom-web-applications/'],
-    ['Digital Consulting', 'services/digital-consulting/'],
     ['AI Consulting', 'services/ai-strategy/'],
-    ['AI Site Optimization Tools', 'services/ai-search-optimization/'],
-    ['Marketplace Management', 'services/marketplace-management/'],
-    ['Website Maintenance', 'services/website-maintenance/']
+    ['AI Site Optimization Tools', 'services/ai-search-optimization/']
   ];
 
   var COMPANY_LINKS = [
@@ -59,6 +58,8 @@
   ];
 
   /* ---------- Render ---------- */
+  var ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h17M15 7l5 5-5 5"/></svg>';
+
   function list(items, internal) {
     return items.map(function (i) {
       return '<li><a href="' + (internal ? url(i[1]) : i[1]) + '">' + i[0] + '</a></li>';
@@ -88,7 +89,8 @@
             '<p><a href="mailto:' + COMPANY.email + '">' + COMPANY.email + '</a><br><a href="tel:' + COMPANY.tel + '">' + COMPANY.phone + '</a></p>' +
             '<h4>Office</h4><p>' + COMPANY.office + '</p>' +
           '</div>' +
-          '<div class="footer__col"><h3>Services</h3><ul>' + list(SERVICES, true) + '</ul></div>' +
+          '<div class="footer__col"><h3>Services</h3><ul>' + list(SERVICES, true) +
+            '<li><a class="footer__more" href="' + url('services/') + '">All Services ' + ARROW + '</a></li></ul></div>' +
           '<div class="footer__col"><h3>Company</h3><ul>' + list(COMPANY_LINKS, true) + '</ul></div>' +
         '</div>' +
         '<div class="footer__bottom">' +
