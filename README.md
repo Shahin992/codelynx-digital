@@ -28,5 +28,9 @@ Open the folder with any static server (for example Live Server) and edit the fi
 
 - `index.html`, `about/`, `services/`, `insights/` ... : one folder per page
 - `css/style.css`, `js/` (nav, footer, posts, main), `images/`
-- `build.sh`: production build (copy pages, minify CSS/JS, cache-busting links)
+- `build.sh`: production build (copy pages, minify CSS/JS, cache-busting links, generate `sitemap.xml`)
+- `robots.txt`, `llms.txt`: crawler rules and a plain-text site summary for AI tools. They and the
+  generated sitemap use `__SITE_URL__`; the Worker swaps in the address the site is visited on,
+  or build with `SITE_URL=https://www.example.com ./build.sh` to write a fixed domain.
+  Add new pages to `llms.txt` by hand; the sitemap picks them up automatically.
 - `worker/index.js`, `wrangler.toml`: the Cloudflare Worker that serves the site from R2

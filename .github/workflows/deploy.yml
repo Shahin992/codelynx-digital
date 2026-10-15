@@ -36,6 +36,8 @@ jobs:
           fi
 
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history, so sitemap.xml gets each page's real last-changed date
 
       - uses: actions/setup-node@v4
         with:

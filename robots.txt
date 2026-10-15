@@ -1,0 +1,7 @@
+# Codelynx Digital
+User-agent: *
+Allow: /
+Disallow: /thank-you/
+Disallow: /404.html
+
+Sitemap: __SITE_URL__/sitemap.xml
