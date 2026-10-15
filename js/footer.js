@@ -13,12 +13,10 @@
   /* ---------- Footer content ---------- */
   var COMPANY = {
     name: 'Codelynx Digital',
-    address: ['123 Main Street', 'Suite A', 'Your City, ST 00000'],
-    phone: '(000) 000-0000',
-    tel: '+10000000000',
-    email: 'hello@yourbrand.com',
-    mainOffice: 'Your City, ST',
-    satelliteOffices: 'Second City, ST | Third City, ST'
+    address: ['House-08, Road-22, Block-D,', 'Section-6, Mirpur-1216', 'Dhaka, Bangladesh'],
+    phone: '+8801580391983',
+    tel: '+8801580391983',
+    office: 'Mirpur, Dhaka, Bangladesh'
   };
 
   var BUDGET_CALCULATOR = '#';
@@ -89,9 +87,8 @@
           '</div>' +
           '<div class="footer__col">' +
             '<h3>Get In Touch</h3>' +
-            '<p><a href="mailto:' + COMPANY.email + '">' + COMPANY.email + '</a><br><a href="tel:' + COMPANY.tel + '">' + COMPANY.phone + '</a></p>' +
-            '<h4>Main Office</h4><p>' + COMPANY.mainOffice + '</p>' +
-            '<h4>Satellite Offices</h4><p>' + COMPANY.satelliteOffices + '</p>' +
+            '<p><a href="tel:' + COMPANY.tel + '">' + COMPANY.phone + '</a></p>' +
+            '<h4>Office</h4><p>' + COMPANY.office + '</p>' +
           '</div>' +
           '<div class="footer__col"><h3>Services</h3><ul>' + list(SERVICES, true) + '</ul></div>' +
           '<div class="footer__col"><h3>Company</h3><ul>' + list(COMPANY_LINKS, true) + '</ul></div>' +
