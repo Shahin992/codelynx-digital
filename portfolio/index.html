@@ -4,20 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Web Design Portfolio &amp; Case Studies | Codelynx Digital</title>
-  <meta name="description" content="Selected website design, SEO and digital marketing projects from Codelynx Digital.">
+  <meta name="description" content="See selected website design, e-commerce, SEO and digital marketing projects by Codelynx Digital, and the results each one delivered.">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../images/logo.png">
-  <link rel="apple-touch-icon" href="../images/logo.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../images/favicon-64.png">
+  <link rel="apple-touch-icon" href="../images/icon-180.png">
+  <link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/poppins-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/poppins-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/poppins-600-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/style.css">
+  <!-- seo:start: canonical, social sharing and structured data (the site address is filled in when the page is served) -->
+  <meta name="theme-color" content="#0c0e12">
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="canonical" href="__SITE_URL__/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Codelynx Digital">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Web Design Portfolio &amp; Case Studies | Codelynx Digital">
+  <meta property="og:description" content="See selected website design, e-commerce, SEO and digital marketing projects by Codelynx Digital, and the results each one delivered.">
+  <meta property="og:url" content="__SITE_URL__/portfolio/">
+  <meta property="og:image" content="__SITE_URL__/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Codelynx Digital, web design agency in Dhaka, Bangladesh">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"__SITE_URL__/#organization","name":"Codelynx Digital","url":"__SITE_URL__/","logo":{"@type":"ImageObject","url":"__SITE_URL__/images/icon-180.png","width":180,"height":180},"image":"__SITE_URL__/images/og-image.jpg","description":"Codelynx Digital is a web design, development and digital marketing agency in Dhaka, Bangladesh, building custom websites, online stores and web applications and growing businesses with SEO, digital marketing and AI search optimization.","telephone":"+8801580391983","address":{"@type":"PostalAddress","streetAddress":"House-08, Road-22, Block-D, Section-6, Mirpur","addressLocality":"Dhaka","postalCode":"1216","addressCountry":"BD"},"contactPoint":{"@type":"ContactPoint","telephone":"+8801580391983","contactType":"customer service","url":"__SITE_URL__/contact/"},"knowsAbout":["Custom Web Design","E-commerce Development","Custom Web Applications","Website Maintenance","Local SEO Services","Digital Marketing","Marketplace Management","CRM Integration","Digital Consulting","AI Strategy & Integration","AI Search Optimization"]},{"@type":"WebSite","@id":"__SITE_URL__/#website","url":"__SITE_URL__/","name":"Codelynx Digital","inLanguage":"en","publisher":{"@id":"__SITE_URL__/#organization"}},{"@type":"CollectionPage","@id":"__SITE_URL__/portfolio/#webpage","url":"__SITE_URL__/portfolio/","name":"Web Design Portfolio & Case Studies | Codelynx Digital","description":"See selected website design, e-commerce, SEO and digital marketing projects by Codelynx Digital, and the results each one delivered.","inLanguage":"en","isPartOf":{"@id":"__SITE_URL__/#website"},"breadcrumb":{"@id":"__SITE_URL__/portfolio/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"__SITE_URL__/portfolio/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"__SITE_URL__/"},{"@type":"ListItem","position":2,"name":"Our Work","item":"__SITE_URL__/portfolio/"}]}]}</script>
+  <!-- seo:end -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div id="siteNav"></div>
-  <script src="../js/nav.js"></script>
+  <script defer src="../js/nav.js"></script>
 
   <main id="main">
 
@@ -27,7 +47,7 @@
         <h1 class="split">Real Projects. <strong>Measurable Results.</strong></h1>
         <div class="page-hero__text reveal">
           <p>For more than two decades we have designed and built websites for organizations of every size. Each project starts with our client's goals, whether that's a focused small-business site or a complex platform serving customers nationwide. Here is a selection of work we're especially proud of.</p>
-          <p>Want examples from <a href="#">your industry</a>? <a href="../contact/">Just ask</a>.</p>
+          <p>Want examples from <a href="../industries/">your industry</a>? <a href="../contact/">Just ask</a>.</p>
         </div>
       </div>
     </section>
@@ -40,47 +60,37 @@
             <div class="reviews__track">
               <figure class="review glow">
                 <div class="review__inner">
-                  <div class="review__stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path id="star" d="M12 1.8l3.1 6.6 7.2.9-5.3 5 1.4 7.1L12 17.9l-6.4 3.5L7 14.3l-5.3-5 7.2-.9z"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
+                  <div class="review__stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path id="star" d="M12 1.8l3.1 6.6 7.2.9-5.3 5 1.4 7.1L12 17.9l-6.4 3.5L7 14.3l-5.3-5 7.2-.9z"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
                   <blockquote>Creative, fast and genuinely invested in our success. Hiring them was an easy call.</blockquote>
                   <figcaption>Jamie Collins</figcaption>
-                  <a href="#" class="btn btn--outline-teal">Read Full Review <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg></a>
-                  <a href="#" class="review__more">View More Reviews</a>
                 </div>
               </figure>
               <figure class="review glow">
                 <div class="review__inner">
-                  <div class="review__stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
+                  <div class="review__stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
                   <blockquote>They turned a complicated project into a simple, even enjoyable, process from start to finish.</blockquote>
                   <figcaption>Dana Whitfield</figcaption>
-                  <a href="#" class="btn btn--outline-teal">Read Full Review <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg></a>
-                  <a href="#" class="review__more">View More Reviews</a>
                 </div>
               </figure>
               <figure class="review glow">
                 <div class="review__inner">
-                  <div class="review__stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
+                  <div class="review__stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
                   <blockquote>Our new website paid for itself within the first quarter. The leads speak for themselves.</blockquote>
                   <figcaption>Marcus Lee</figcaption>
-                  <a href="#" class="btn btn--outline-teal">Read Full Review <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg></a>
-                  <a href="#" class="review__more">View More Reviews</a>
                 </div>
               </figure>
               <figure class="review glow">
                 <div class="review__inner">
-                  <div class="review__stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
+                  <div class="review__stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
                   <blockquote>Every question got a quick, thoughtful answer. It felt like a true partnership.</blockquote>
                   <figcaption>Priya Shah</figcaption>
-                  <a href="#" class="btn btn--outline-teal">Read Full Review <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg></a>
-                  <a href="#" class="review__more">View More Reviews</a>
                 </div>
               </figure>
               <figure class="review glow">
                 <div class="review__inner">
-                  <div class="review__stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
+                  <div class="review__stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
                   <blockquote>Professional, patient and full of great ideas. We would work with them again tomorrow.</blockquote>
                   <figcaption>Logan Price</figcaption>
-                  <a href="#" class="btn btn--outline-teal">Read Full Review <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg></a>
-                  <a href="#" class="review__more">View More Reviews</a>
                 </div>
               </figure>
             </div>
@@ -122,15 +132,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">MotoX Powersports</span>
               <h3 class="reveal">Website Redesign &amp; Digital Strategy <strong>for a National Powersports Brand</strong></h3>
               <p class="reveal reveal--d1">We rebuilt this manufacturer's site around fast, intuitive product discovery so riders can compare scooters, ATVs and side-by-sides in seconds. A long-term SEO plan and a dealer locator turn that interest into qualified showroom visits, giving the brand a premium online experience that drives measurable growth across its national dealer network.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Manufacturing</a></span>
-                <span>Services: <a href="#">Custom Software</a>, <a href="#">Custom Web Design</a>, <a href="#">Digital Strategy</a>, <a href="#">SEO</a>, <a href="#">Website Maintenance</a></span>
+                <span>Industry: <a href="../industries/">Manufacturing</a></span>
+                <span>Services: <a href="../services/custom-web-applications/">Custom Software</a>, <a href="../services/custom-web-design/">Custom Web Design</a>, <a href="../services/digital-consulting/">Digital Strategy</a>, <a href="../services/seo-services/">SEO</a>, <a href="../services/website-maintenance/">Website Maintenance</a></span>
               </div>
             </div>
           </article>
@@ -156,15 +165,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">Volt Electronics</span>
               <h3 class="reveal">Marketplace Strategy &amp; Omnichannel Retail <strong>for a Consumer Electronics Brand</strong></h3>
               <p class="reveal reveal--d1">For nearly a decade we have managed this brand's online marketplace storefront, keeping listings, product content and advertising in step with trade-show booths and in-store displays. The result is one consistent, high-performing identity across every channel where shoppers meet the brand.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Retail</a></span>
-                <span>Services: <a href="#">Marketplace Management</a>, <a href="#">Custom Software</a>, <a href="#">Digital Strategy</a>, <a href="#">E-Commerce</a></span>
+                <span>Industry: <a href="../industries/">Retail</a></span>
+                <span>Services: <a href="../services/marketplace-management/">Marketplace Management</a>, <a href="../services/custom-web-applications/">Custom Software</a>, <a href="../services/digital-consulting/">Digital Strategy</a>, <a href="../services/ecommerce-development/">E-Commerce</a></span>
               </div>
             </div>
           </article>
@@ -192,15 +200,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">CareWell Health</span>
               <h3 class="reveal">Service Launch &amp; Digital Marketing <strong>for a Regional Healthcare Network</strong></h3>
               <p class="reveal reveal--d1">When CareWell introduced a combined screening service, we designed a dedicated landing experience that explains it in plain language. Targeted SEO and data-driven campaigns now guide patients from their first question to a booked appointment in a few clicks, with accessible design throughout.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Healthcare</a></span>
-                <span>Services: <a href="#">Custom Web Design</a>, <a href="#">Digital Strategy</a>, <a href="#">SEO</a></span>
+                <span>Industry: <a href="../industries/">Healthcare</a></span>
+                <span>Services: <a href="../services/custom-web-design/">Custom Web Design</a>, <a href="../services/digital-consulting/">Digital Strategy</a>, <a href="../services/seo-services/">SEO</a></span>
               </div>
             </div>
           </article>
@@ -219,15 +226,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">TrailGrip Tires</span>
               <h3 class="reveal">Multi-Channel Advertising &amp; Creative <strong>for a Tire Manufacturer</strong></h3>
               <p class="reveal reveal--d1">We plan and produce seasonal promotions for TrailGrip across display ads, social video and retailer print. Every piece follows a single creative system, so the brand looks and sounds the same on a phone screen, a shop counter or a billboard, and every campaign is measured against real sales.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Manufacturing</a></span>
-                <span>Services: <a href="#">Marketplace Management</a>, <a href="#">Digital Strategy</a></span>
+                <span>Industry: <a href="../industries/">Manufacturing</a></span>
+                <span>Services: <a href="../services/marketplace-management/">Marketplace Management</a>, <a href="../services/digital-consulting/">Digital Strategy</a></span>
               </div>
             </div>
           </article>
@@ -262,15 +268,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">Greenleaf Foundation</span>
               <h3 class="reveal">Mission-Driven Website &amp; SEO <strong>for a Regional Non-Profit</strong></h3>
               <p class="reveal reveal--d1">We delivered a custom website and search strategy that helps a community foundation share its mission across the region. The accessible, high-performance platform makes it easy for partners and residents to find programs, apply for grants and follow the impact of every dollar.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Non-Profit</a></span>
-                <span>Services: <a href="#">Custom Software</a>, <a href="#">Custom Web Design</a>, <a href="#">Digital Strategy</a>, <a href="#">SEO</a>, <a href="#">Website Maintenance</a></span>
+                <span>Industry: <a href="../industries/">Non-Profit</a></span>
+                <span>Services: <a href="../services/custom-web-applications/">Custom Software</a>, <a href="../services/custom-web-design/">Custom Web Design</a>, <a href="../services/digital-consulting/">Digital Strategy</a>, <a href="../services/seo-services/">SEO</a>, <a href="../services/website-maintenance/">Website Maintenance</a></span>
               </div>
             </div>
           </article>
@@ -305,15 +310,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">Summit Solar</span>
               <h3 class="reveal">Lead-Generation Website <strong>for a Residential Solar Installer</strong></h3>
-              <p class="reveal reveal--d1">Summit Solar needed a site that answers homeowners' biggest questions before the first call. We built savings calculators, project galleries and plain-language guides that turn research into booked consultations, and local SEO now puts the team in front of nearby homeowners ready to switch.</p>
+              <p class="reveal reveal--d1">Summit Solar needed a site that answers homeowners' biggest questions before the first call. We built project galleries, clear savings explainers and plain-language guides that turn research into booked consultations, and local SEO now puts the team in front of nearby homeowners ready to switch.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Energy</a>, <a href="#">Education</a></span>
-                <span>Services: <a href="#">Custom Web Design</a>, <a href="#">SEO</a></span>
+                <span>Industry: <a href="../industries/">Energy</a>, <a href="../industries/">Education</a></span>
+                <span>Services: <a href="../services/custom-web-design/">Custom Web Design</a>, <a href="../services/seo-services/">SEO</a></span>
               </div>
             </div>
           </article>
@@ -348,15 +352,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">Harbor &amp; Co. Law</span>
               <h3 class="reveal">Brand Refresh &amp; Website <strong>for a Full-Service Law Firm</strong></h3>
               <p class="reveal reveal--d1">We repositioned Harbor &amp; Co. with a confident new website that puts attorneys and practice areas front and center. Clear intake paths, credible case results and thoughtful content strategy have increased qualified consultation requests while keeping the firm's tone calm and professional.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Law Firm</a>, <a href="#">Professional Services</a></span>
-                <span>Services: <a href="#">Custom Web Design</a>, <a href="#">Digital Strategy</a>, <a href="#">SEO</a></span>
+                <span>Industry: <a href="../industries/">Law Firm</a>, <a href="../industries/">Professional Services</a></span>
+                <span>Services: <a href="../services/custom-web-design/">Custom Web Design</a>, <a href="../services/digital-consulting/">Digital Strategy</a>, <a href="../services/seo-services/">SEO</a></span>
               </div>
             </div>
           </article>
@@ -391,15 +394,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">Ridgeview Realty</span>
               <h3 class="reveal">Property Search Platform <strong>for a Growing Real Estate Team</strong></h3>
               <p class="reveal reveal--d1">We built Ridgeview a fast, map-based listing search connected to their MLS feed, plus neighborhood guides that rank for local searches. Buyers can save homes and book showings in a tap, and agents receive cleaner, better-qualified leads straight to their phones.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Real Estate</a></span>
-                <span>Services: <a href="#">Custom Software</a>, <a href="#">Custom Web Design</a>, <a href="#">SEO</a></span>
+                <span>Industry: <a href="../industries/">Real Estate</a></span>
+                <span>Services: <a href="../services/custom-web-applications/">Custom Software</a>, <a href="../services/custom-web-design/">Custom Web Design</a>, <a href="../services/seo-services/">SEO</a></span>
               </div>
             </div>
           </article>
@@ -434,15 +436,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">BrightSmile Dental</span>
               <h3 class="reveal">Patient-First Website &amp; Local SEO <strong>for a Family Dental Practice</strong></h3>
               <p class="reveal reveal--d1">BrightSmile wanted a site that feels as welcoming as their office. We paired warm photography with online booking, insurance information and treatment pages written for real patients, then grew their map-pack visibility so new families in the area find them first.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Healthcare</a></span>
-                <span>Services: <a href="#">Custom Web Design</a>, <a href="#">Digital Strategy</a>, <a href="#">SEO</a></span>
+                <span>Industry: <a href="../industries/">Healthcare</a></span>
+                <span>Services: <a href="../services/custom-web-design/">Custom Web Design</a>, <a href="../services/digital-consulting/">Digital Strategy</a>, <a href="../services/seo-services/">SEO</a></span>
               </div>
             </div>
           </article>
@@ -477,15 +478,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">Iron Gate Garage Doors</span>
               <h3 class="reveal">Conversion-Focused Website <strong>for a Local Garage Door Company</strong></h3>
               <p class="reveal reveal--d1">Iron Gate's phones are their sales team, so every page is built to make calling easy. Service-area pages, transparent pricing guides and real customer photos earn trust quickly, while local SEO keeps the company at the top of searches for repairs and new installations.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Home Services</a>, <a href="#">Small Business</a></span>
-                <span>Services: <a href="#">Custom Web Design</a>, <a href="#">SEO</a>, <a href="#">Website Maintenance</a></span>
+                <span>Industry: <a href="../industries/">Home Services</a>, <a href="../industries/">Small Business</a></span>
+                <span>Services: <a href="../services/custom-web-design/">Custom Web Design</a>, <a href="../services/seo-services/">SEO</a>, <a href="../services/website-maintenance/">Website Maintenance</a></span>
               </div>
             </div>
           </article>
@@ -520,15 +520,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">Copper Kettle Brewing</span>
               <h3 class="reveal">Taproom Website &amp; Online Store <strong>for a Craft Brewery</strong></h3>
               <p class="reveal reveal--d1">We gave Copper Kettle a site with as much character as their beer: a live tap list, event calendar and an online shop for merchandise and to-go orders. A simple content system lets the team update releases themselves, keeping regulars coming back every week.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Small Business</a></span>
-                <span>Services: <a href="#">Custom Web Design</a>, <a href="#">E-Commerce</a></span>
+                <span>Industry: <a href="../industries/">Small Business</a></span>
+                <span>Services: <a href="../services/custom-web-design/">Custom Web Design</a>, <a href="../services/ecommerce-development/">E-Commerce</a></span>
               </div>
             </div>
           </article>
@@ -563,15 +562,14 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="btn btn--gradient pf-card__visit reveal">Visit Website</a>
             </div>
             <div class="case__body">
               <span class="pf-card__client reveal">Northline Logistics</span>
               <h3 class="reveal">Customer Portal &amp; Website <strong>for a Regional Freight Carrier</strong></h3>
               <p class="reveal reveal--d1">We replaced Northline's paper-heavy process with a secure customer portal for quotes, shipment tracking and documents, wrapped in a modern marketing site. Customers now self-serve around the clock, and the operations team spends its time moving freight instead of answering status calls.</p>
               <div class="pf-card__meta reveal">
-                <span>Industry: <a href="#">Manufacturing</a>, <a href="#">Logistics</a></span>
-                <span>Services: <a href="#">Custom Software</a>, <a href="#">Custom Web Design</a>, <a href="#">Digital Strategy</a></span>
+                <span>Industry: <a href="../industries/">Manufacturing</a>, <a href="../industries/">Logistics</a></span>
+                <span>Services: <a href="../services/custom-web-applications/">Custom Software</a>, <a href="../services/custom-web-design/">Custom Web Design</a>, <a href="../services/digital-consulting/">Digital Strategy</a></span>
               </div>
             </div>
           </article>
@@ -581,10 +579,10 @@
   </main>
 
   <div id="siteFooter"></div>
-  <script src="../js/footer.js"></script>
+  <script defer src="../js/footer.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="../js/main.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="../js/main.js"></script>
 </body>
 </html>

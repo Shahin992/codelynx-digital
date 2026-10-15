@@ -34,3 +34,13 @@ Open the folder with any static server (for example Live Server) and edit the fi
   or build with `SITE_URL=https://www.example.com ./build.sh` to write a fixed domain.
   Add new pages to `llms.txt` by hand; the sitemap picks them up automatically.
 - `worker/index.js`, `wrangler.toml`: the Cloudflare Worker that serves the site from R2
+- `fonts/`: self-hosted Manrope and Poppins (Latin subset, SIL Open Font License)
+- `images/og-image.jpg`: the 1200x630 image shown when a page is shared
+
+## SEO, AEO and GEO
+
+Every page's `<head>` has a block between `<!-- seo:start -->` and `<!-- seo:end -->` with the
+canonical link, Open Graph/Twitter tags and JSON-LD structured data (business details,
+breadcrumbs, services, FAQs, articles). Like the sitemap, it uses `__SITE_URL__`, which the
+Worker replaces with the live address. When you change a page's title, description or FAQs,
+update the matching values in its block too.

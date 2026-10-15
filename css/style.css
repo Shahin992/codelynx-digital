@@ -2,6 +2,56 @@
    Homepage – layout cloned from beckdigital.com, original content
    ========================================================================== */
 
+/* ---------- Fonts: self-hosted Latin subsets (SIL Open Font License, see fonts/) ---------- */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 200 800;   /* one variable font file covers every weight */
+  font-display: swap;
+  src: url("../fonts/manrope-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/poppins-300.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/poppins-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/poppins-500.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/poppins-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/poppins-600-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --navy: #091529;
   --teal: #0095a8;
@@ -175,7 +225,7 @@ svg { display: block; }
   box-shadow: 0 1px 0 rgba(9, 21, 41, .08), 0 8px 30px -18px rgba(9, 21, 41, .35);
 }
 
-/* Codelynx logo (images/logo-with-brand.png). The PNG has wide transparent
+/* Codelynx logo (images/logo-with-brand.webp, a half-size copy of the PNG). It has wide transparent
    margins, so .logo__crop trims them (artwork sits at x 23-1518, y 322-697
    of 1536x1024). On dark backgrounds a second, white copy of the image is
    laid over the navy "Codelynx" lettering so it stays readable; the icon
@@ -745,7 +795,14 @@ svg { display: block; }
     visibility: hidden;
     animation: anim-failsafe 0s 4s forwards;
   }
+  /* The first section (the hero) paints straight away, since it is what loads first and
+     what PageSpeed measures as LCP; main.js only slides it into place. */
+  .js:not(.no-anim) #main > section:first-child :is(.reveal, .split, .swipe-up) {
+    visibility: visible;
+    animation: none;
+  }
 }
+#main > section:first-child .split .word { overflow: visible; }
 @keyframes anim-failsafe { to { visibility: visible; } }
 .js.anim-ready .reveal,
 .js.anim-ready .split,
@@ -2614,34 +2671,6 @@ svg { display: block; }
 .ai-timeline span { font-size: 14px; line-height: 1.6; color: rgba(246, 247, 250, .75); }
 .ai-compare__card--after .ai-timeline span { color: rgba(255, 255, 255, .85); }
 
-.ai-roi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; padding: 50px; }
-.ai-roi label {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  font-family: var(--font-head);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--white);
-}
-.ai-roi output { color: var(--teal-light); }
-.ai-roi input[type="range"] { width: 100%; margin: 16px 0 6px; accent-color: var(--teal); }
-.ai-roi__hint { margin: 0 0 26px; font-size: 13px; color: rgba(246, 247, 250, .6); }
-.ai-roi__note { margin: 0; padding: 14px 16px; border-left: 3px solid #3b82f6; border-radius: 4px; font-size: 14px; background: rgba(59, 130, 246, .1); }
-.ai-roi__results {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 10px;
-  text-align: center;
-  background: rgba(255, 255, 255, .03);
-}
-.ai-roi__label { margin: 0 0 6px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(246, 247, 250, .6); }
-.ai-roi__value { margin: 0 0 30px; font-family: var(--font-head); font-size: 46px; font-weight: 800; line-height: 1.1; color: var(--white); }
-.ai-roi__value:last-child { margin-bottom: 0; }
-.ai-roi__value--teal { color: var(--teal-light); }
 
 .ai-docsplit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 60px; align-items: center; }
 .ai-docsplit__text { padding: 40px; }
@@ -3162,7 +3191,7 @@ svg { display: block; }
 .post-content li::marker { color: var(--teal); }
 .post-content strong { font-weight: 600; color: var(--navy); }
 .post-content a {
-  color: var(--teal);
+  color: #007f91;   /* darker teal: 4.7:1 on white for body-size text */
   font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -3321,7 +3350,6 @@ svg { display: block; }
   .philo__grid,
   .svc-faq__grid,
   .ai-compare,
-  .ai-roi,
   .ai-docsplit,
   .ai-tabs__panel { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .svc-faq__head { position: static; }
@@ -3395,12 +3423,10 @@ svg { display: block; }
   .ai-title { font-size: 1.9rem; }
   .ai-card,
   .ai-compare__card,
-  .ai-roi,
   .ai-docsplit__text { padding: 28px 24px; }
   .ai-card h3 { font-size: 1.6rem; }
   .ai-tabs { padding: 20px 20px 28px; }
   .ai-tabs__btn { padding: 12px 14px; font-size: 14px; }
-  .ai-roi__value { font-size: 36px; }
   .ai-shadow { height: 470px; }
   .ai-shadow__md { width: 74%; padding: 18px 14px; }
   .ai-shadow__md pre { font-size: 8.5px; }

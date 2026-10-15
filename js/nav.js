@@ -81,7 +81,7 @@
   }
   // The second (white) copy is only shown over dark backgrounds; see .logo__img--rev in style.css.
   function logo(extra) {
-    var src = url('images/logo-with-brand.png');
+    var src = url('images/logo-with-brand.webp');
     return '<a href="' + url('') + '" class="logo' + (extra || '') + '" aria-label="Codelynx Digital home">' +
       '<span class="logo__crop"><img src="' + src + '" alt="Codelynx Digital" class="logo__img" width="1536" height="1024">' +
       '<img src="' + src + '" alt="" class="logo__img logo__img--rev" width="1536" height="1024"></span></a>';
