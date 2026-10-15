@@ -487,24 +487,53 @@
     });
   }
 
-  /* ---------- Contact form ---------- */
-  // Not connected to a form service yet. Before launch, send the fields to your provider
-  // (Formspree, Netlify Forms, your CRM, etc.) where the thank-you panel is shown below.
+  /* ---------- 404 page: the 4-0-4 face draws itself in, then blinks now and then ---------- */
+  var nfFace = document.querySelector('.nf-face');
+  if (nfFace && animate) {
+    var faceStrokes = Array.prototype.slice.call(nfFace.querySelectorAll('path, rect'));
+    var faceEyes = nfFace.querySelector('.nf-face__eyes');
+    faceStrokes.forEach(function (el) {
+      var length = el.getTotalLength();
+      gsap.set(el, { strokeDasharray: length, strokeDashoffset: length });
+    });
+    gsap.timeline({ delay: 0.3 })
+      .to(faceStrokes, { strokeDashoffset: 0, duration: 0.9, ease: 'power2.inOut', stagger: 0.18 })
+      .add(function () {
+        gsap.timeline({ repeat: -1, repeatDelay: 2.5 })
+          .to(faceEyes, { x: -8, duration: 0.5, ease: 'power2.inOut' })
+          .to(faceEyes, { x: 8, duration: 0.8, ease: 'power2.inOut' }, '+=0.6')
+          .to(faceEyes, { x: 0, duration: 0.5, ease: 'power2.inOut' }, '+=0.6')
+          .to(faceEyes, { scaleY: 0.1, transformOrigin: '50% 70%', duration: 0.1, ease: 'power1.in' }, '+=0.4')
+          .to(faceEyes, { scaleY: 1, duration: 0.16, ease: 'power1.out' });
+      });
+  }
+
+  /* ---------- Contact form: stored in a Google Form ---------- */
+  // The form's action is the Google Form's formResponse URL and each field is named after
+  // its question ID (see contact/index.html). After checking the fields we send them in the
+  // background, then open the thank-you page from data-thanks. Google does not let other
+  // sites read its reply, so a sent request is treated as delivered.
   var contactForm = document.querySelector('[data-contact-form]');
   if (contactForm) {
-    var contactSuccess = document.querySelector('[data-contact-success]');
+    var contactStatus = contactForm.querySelector('[data-contact-status]');
+    var contactSubmit = contactForm.querySelector('[type="submit"]');
+    var thanksUrl = contactForm.getAttribute('data-thanks');
     var contactMessages = {
-      name: 'Please enter your name.',
-      email: 'Please enter a valid email address.',
-      phone: 'Please enter a phone number we can reach you on.'
+      cfName: 'Please enter your name.',
+      cfEmail: 'Please enter a valid email address.',
+      cfPhone: 'Please enter a phone number we can reach you on.'
     };
     var requiredFields = Array.prototype.slice.call(contactForm.querySelectorAll('[required]'));
     var checkField = function (input) {
       var ok = input.value.trim() !== '' && input.checkValidity();
       var err = document.getElementById(input.getAttribute('aria-describedby'));
       input.setAttribute('aria-invalid', String(!ok));
-      if (err) err.textContent = ok ? '' : contactMessages[input.name];
+      if (err) err.textContent = ok ? '' : contactMessages[input.id];
       return ok;
+    };
+    var setSending = function (sending) {
+      contactSubmit.disabled = sending;
+      contactSubmit.textContent = sending ? 'Sending...' : 'Send';
     };
 
     requiredFields.forEach(function (input) {
@@ -516,17 +545,32 @@
 
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (contactForm.elements.website.value) return; // spam trap was filled in: ignore quietly
+      contactStatus.hidden = true;
+      // Spam trap was filled in: skip sending but behave as if it worked.
+      if (contactForm.elements.website.value) { window.location.href = thanksUrl; return; }
+
       var firstBad = null;
       requiredFields.forEach(function (input) {
         if (!checkField(input) && !firstBad) firstBad = input;
       });
       if (firstBad) { firstBad.focus(); return; }
 
-      contactForm.hidden = true;
-      contactSuccess.hidden = false;
-      contactSuccess.focus();
-      if (animate) gsap.fromTo(contactSuccess, { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out' });
+      var data = new URLSearchParams(new FormData(contactForm));
+      data.delete('website');
+      var timeout = new AbortController();
+      var timer = setTimeout(function () { timeout.abort(); }, 15000);
+
+      setSending(true);
+      fetch(contactForm.action, { method: 'POST', mode: 'no-cors', body: data, signal: timeout.signal })
+        .then(function () {
+          window.location.href = thanksUrl;
+        })
+        .catch(function () {
+          setSending(false);
+          contactStatus.textContent = 'Sorry, your message could not be sent. Please check your connection and try again.';
+          contactStatus.hidden = false;
+        })
+        .finally(function () { clearTimeout(timer); });
     });
   }
 

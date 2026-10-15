@@ -209,6 +209,10 @@ svg { display: block; }
 .site-header:not(.is-scrolled):not(.has-mega) .logo__img--rev,
 .logo--drawer .logo__img--rev,
 .logo--footer .logo__img--rev { opacity: 1; }
+/* over a teal hero (<html data-hero="teal">) the cyan "Digital" turns white too */
+[data-hero="teal"] .site-header:not(.is-scrolled):not(.has-mega) .logo__img--rev {
+  clip-path: polygon(28.19% 29.3%, 99.2% 29.3%, 99.2% 70.31%, 30.73% 70.31%, 30.73% 55.66%, 28.91% 55.66%, 28.91% 52.25%, 28.19% 52.25%);
+}
 
 /* Desktop links */
 .nav { margin: 0 auto; }
@@ -3107,12 +3111,9 @@ svg { display: block; }
   transition: background-color .25s, color .25s, box-shadow .3s;
 }
 .cform__submit:hover { color: var(--ink); background: var(--teal-light); box-shadow: 0 0 22px rgba(121, 215, 227, .5); }
-.cform-success { padding: 30px 10px 20px; text-align: center; color: var(--light); }
-.cform-success:focus { outline: none; }
-.cform-success svg { width: 54px; height: 54px; margin: 0 auto 16px; fill: none; stroke: var(--teal-light); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.cform-success h3 { margin: 0 0 10px; font-size: 1.3rem; color: var(--white); }
-.cform-success p { margin: 0; font-size: 15px; line-height: 1.7; }
-.cform-success a { color: var(--teal-light); }
+.cform__submit:disabled { cursor: wait; opacity: .75; }
+.cform__status { margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: #ff9196; }
+.cform__status[hidden] { display: none; }
 
 .contact-locations .loc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }
 .contact-locations .loc-card h3 { margin: 19px 0 10px; font-size: 19.2px; line-height: 1; color: var(--teal); }
@@ -3231,6 +3232,61 @@ svg { display: block; }
 .post-related .page-title { margin-bottom: 20px; }
 
 /* ==========================================================================
+   THANK-YOU PAGE
+   ========================================================================== */
+.ty-badge {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  background: var(--teal-light);
+}
+.ty-badge svg { width: 36px; height: 36px; fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.ty-hero .page-hero__text { margin-bottom: 14px; }
+
+/* ==========================================================================
+   404 PAGE
+   ========================================================================== */
+.nf-hero { overflow: hidden; }
+.nf-hero::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  height: 60%;
+  background: url("../images/network.svg") right bottom / cover no-repeat;
+  opacity: .7;
+  pointer-events: none;
+}
+.nf-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 60px;
+  align-items: center;
+}
+.nf-text h1 { margin: 0 0 26.08px; font-size: 3.26rem; line-height: 1; color: var(--white); }
+.nf-text p { max-width: 535px; margin: 0 0 17.6px; font-size: 1.1rem; line-height: 1.6; color: var(--light); }
+.nf-text .btn { margin: 4px 0 22px; }
+.nf-links { margin: 0; padding-left: 40px; list-style: disc; font-size: 1.1rem; line-height: 1.6; color: var(--light); }
+.nf-links a { color: var(--white); text-decoration: none; }
+.nf-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.nf-art { display: grid; place-items: center; }
+.nf-face {
+  width: min(100%, 260px);
+  height: auto;
+  overflow: visible;
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 17;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 1200px) {
@@ -3262,6 +3318,8 @@ svg { display: block; }
   .post-body { padding: 100px 0 80px; }
   .post-layout { grid-template-columns: minmax(0, 1fr); gap: 60px; }
   .post-article { max-width: 760px; }
+  .nf-grid { grid-template-columns: minmax(0, 1fr); gap: 50px; }
+  .nf-art { justify-items: start; }
   .post-side { display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 1fr); align-items: start; gap: 30px; }
   .post-side__card { position: static; }
   .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
@@ -3371,6 +3429,9 @@ svg { display: block; }
   .team-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .blog-grid { column-count: 1; }
   .post-hero h1 { font-size: 2rem; line-height: 1.2; }
+  .nf-hero { padding-top: 130px; }
+  .nf-text h1 { font-size: 2.2rem; }
+  .nf-face { width: 190px; }
   .post-body { padding: 70px 0 60px; }
   .post-content { font-size: 1rem; line-height: 1.85; }
   .post-content h2 { margin-top: 60px; font-size: 24px; }

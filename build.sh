@@ -8,7 +8,7 @@
 # Locally you only need it to preview the minified output.
 #
 # It:
-#   1. copies every page (index.html) and the images folder into build/
+#   1. copies every page (index.html), 404.html and the images folder into build/
 #   2. minifies css/ and js/ with esbuild (falls back to plain copies if npx is missing)
 #   3. adds ?v=<hash> to the CSS/JS links so browsers load fresh files after each deploy
 set -euo pipefail
@@ -25,6 +25,7 @@ find . -name index.html -not -path "./$OUT/*" -not -path './.git/*' -not -path '
   mkdir -p "$OUT/$(dirname "$page")"
   cp "$page" "$OUT/$page"
 done
+cp 404.html "$OUT/404.html"
 cp -r images "$OUT/images"
 
 # 2. css + js
@@ -39,7 +40,7 @@ fi
 
 # 3. cache-busting version on the CSS/JS links
 VERSION=$(cat "$OUT"/css/*.css "$OUT"/js/*.js | md5sum | cut -c1-8)
-find "$OUT" -name index.html -exec sed -i -E \
+find "$OUT" -name '*.html' -exec sed -i -E \
   -e "s#(css/style\.css)\"#\1?v=$VERSION\"#" \
   -e "s#(js/(nav|footer|posts|main)\.js)\"#\1?v=$VERSION\"#g" {} +
 
